@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "/genproto";
+
+package forum_protos;
+
+import "common.proto";
+
+service TagService {
+    rpc CreateTag(TagCreate) returns (Tag) {}
+    rpc DeleteTag(ById) returns (Void) {}
+    rpc UpdateTag(TagCreate) returns (Tag) {}
+    rpc GetTag(ByName) returns (Tag) {}
+    rpc GetTags(Void) returns (TagList) {}
+}
+message TagCreate {
+    string TagId = 1;
+    string Name = 2;
+}
+message Tag {
+    string TagId = 1;
+    string Name = 2;
+}
+message TagList {
+    repeated Tag Tags = 1;
+}

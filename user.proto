@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option go_package = "/genproto";
+
+package forum_protos;
+
+import "common.proto";
+
+service UserService {
+    rpc RegisterUser(UserCreate) returns (User) {}    
+    rpc GetUsers(Void) returns (Users) {}
+    rpc UpdateUser(UserCreate) returns (User){}
+    rpc DeleteUser(ById) returns (Void){}
+    rpc LoginUser(LoginReq) returns (Token){}
+    rpc GetUserInfo(ByUsername) returns (User) {}
+}
+
+message UserCreate {
+    string UserId = 1;
+    string UserName = 2;
+    string Email = 3;
+    string Password = 4;
+}
+message User {
+    string UserId = 1;
+    string UserName = 2;
+    string Email = 3;
+    string Password = 4;
+}
+message UserModel {
+    string UserName = 2;
+    string Email = 3;
+    string Password = 4;
+}
+message Users {
+    repeated User Users = 1;
+}
+message LoginReq {
+    string UserName = 1;
+    string Password = 2;
+} 
+message Token {
+    string AccessToken = 1;
+    string RefreshToken = 2;
+}
+message ByUsername {
+    string Username = 1;
+}

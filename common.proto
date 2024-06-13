@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "/genproto";
+
+package forum_protos;
+
+message ById {
+    string Id = 1;
+}
+
+message Void {}
+
+message ByName {
+    string Name = 1;
+}

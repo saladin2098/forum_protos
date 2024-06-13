@@ -1,0 +1,31 @@
+syntax = "proto3";
+option go_package = "/genproto";
+package forum_protos;
+import "common.proto";
+
+service PostTagService {
+    rpc GetPostTags(ByPost) returns (PostTags);
+    rpc CreatePostTag(PostTagCreate) returns (PostTag);
+    rpc GetPostTag(ById) returns (PostTag);
+    rpc DeletePostTagById(ById) returns (Void);
+}
+message PostTagCreate {
+    string PostTagId =1;
+    string PostId =2;
+    string TagId =3;
+}
+message PostTag {
+    string PostTagId =1;
+    string PostId =2;
+    string TagId =3;
+}
+message PostTagModel {
+    string PostId =2;
+    string TagId =3;
+}
+message ByPost {
+    string PostId = 1;
+}
+message PostTags {
+    repeated PostTag PostTags = 1;
+}
