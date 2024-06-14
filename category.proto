@@ -10,7 +10,7 @@ service CategoryService {
     rpc CreateCategory(Category) returns (Category) {}
     rpc GetCategory(ByName) returns (Category) {}
     rpc ListCategories(Void) returns (Categories) {}
-    rpc Deletecategory(ByName) returns (Categories) {}
+    rpc Deletecategory(ByName) returns (Void) {}
     rpc UpdateCategory(Category) returns (Category) {}
 }
 
