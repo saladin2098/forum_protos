@@ -7,17 +7,13 @@ package forum_protos;
 import "common.proto";
 
 service CategoryService {
-    rpc CreateCategory(CategoryCreate) returns (Category) {}
+    rpc CreateCategory(Category) returns (Category) {}
     rpc GetCategory(ByName) returns (Category) {}
     rpc ListCategories(Void) returns (Categories) {}
     rpc Deletecategory(ByName) returns (Categories) {}
-    rpc UpdateCategory(CategoryCreate) returns (Category) {}
+    rpc UpdateCategory(Category) returns (Category) {}
 }
 
-message CategoryCreate {
-    string CategoryId = 1;
-    string Name = 2;
-}
 message Category {
     string CategoryId = 1;
     string Name = 2;
