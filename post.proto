@@ -4,18 +4,11 @@ package forum_protos;
 import "common.proto";
 
 service PostService {
-    rpc CreatePost(PostCreate) returns (Post);
+    rpc CreatePost(Post) returns (Post);
     rpc GetPost(ById) returns (Post);
     rpc GetPosts(PostFilter) returns (Posts);
-    rpc UpdatePost(PostCreate) returns (Post);
+    rpc UpdatePost(Post) returns (Post);
     rpc DeletePost(ById) returns (Void);
-}
-message PostCreate {
-    string PostId =1;
-    string UserId =2;
-    string Title =3;
-    string Body =4;
-    string CategoryId =5;
 }
 message PostModel {
     string UserId =1;
