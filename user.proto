@@ -7,20 +7,14 @@ package forum_protos;
 import "common.proto";
 
 service UserService {
-    rpc RegisterUser(UserCreate) returns (User) {}    
+    rpc RegisterUser(User) returns (User) {}    
     rpc GetUsers(Void) returns (Users) {}
-    rpc UpdateUser(UserCreate) returns (User){}
+    rpc UpdateUser(User) returns (User){}
     rpc DeleteUser(ById) returns (Void){}
     rpc LoginUser(LoginReq) returns (Token){}
     rpc GetUserInfo(ByUsername) returns (User) {}
 }
 
-message UserCreate {
-    string UserId = 1;
-    string UserName = 2;
-    string Email = 3;
-    string Password = 4;
-}
 message User {
     string UserId = 1;
     string UserName = 2;
