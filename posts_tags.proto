@@ -5,15 +5,12 @@ import "common.proto";
 
 service PostTagService {
     rpc GetPostTags(ByPost) returns (PostTags);
-    rpc CreatePostTag(PostTagCreate) returns (PostTag);
+    rpc CreatePostTag(PostTag) returns (PostTag);
     rpc GetPostTag(ById) returns (PostTag);
     rpc DeletePostTagById(ById) returns (Void);
+    rpc UpdatePostTag(PostTag) returns (PostTag);
 }
-message PostTagCreate {
-    string PostTagId =1;
-    string PostId =2;
-    string TagId =3;
-}
+
 message PostTag {
     string PostTagId =1;
     string PostId =2;
