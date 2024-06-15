@@ -12,6 +12,7 @@ service TagService {
     rpc UpdateTag(Tag) returns (Tag) {}
     rpc GetTag(ByName) returns (Tag) {}
     rpc GetTags(Void) returns (TagList) {}
+    rpc GetPopularTags(Void) returns (TagList) {}
 }
 
 message Tag {
