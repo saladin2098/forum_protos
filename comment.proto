@@ -7,18 +7,17 @@ package forum_protos;
 import "common.proto";
 
 service ComentService {
-    rpc CreateComent(CommentCreate) returns (Comment) {}
+    rpc CreateComent(Comment) returns (Comment) {}
     rpc GetComent(ById) returns (Comment) {}
-    rpc UpdateComent(CommentCreate) returns (Comment) {}
+    rpc UpdateComent(Comment) returns (Comment) {}
     rpc DeleteComent(ById) returns (Void) {}
     rpc GetComents(CommentFilter) returns (Comments) {}
 }
 
-message CommentCreate {
-    string CommentId = 1;
-    string PostId = 2;
-    string UserId = 3;
-    string Body = 4;
+message CommentModel {
+    string PostId = 1;
+    string UserId = 2;
+    string Body = 3;
 }
 message Comment {
     string CommentId = 1;
